@@ -15,7 +15,6 @@ function addExcitement (theWordArray) {
       // Write a `for` loop that iterates over the array argument and
       // outputs the words.
      for (let i = 0; i < theWordArray.length; i++){
-
      		// This cl prints each individual word to the console
      		// console.log(theWordArray[i]);
 
@@ -25,13 +24,12 @@ function addExcitement (theWordArray) {
 
      		//this runs through each word adding a space and the next word in the array to the next until the whole sentence is displayed.
      		output += " " + currentWord;
-     
 
-			//this one is a doozie...it means if i (the iteration) + 1 (because the index starts at 0) divided by 3 equals 0, then add an exclamation point after that word. 
-     		if ((i+1) % 3===0) {
+			// // this one is a doozie...it means if i (the iteration) + 1 (because the index starts at 0) divided by 3 equals 0, then add an exclamation point after that word. 
+     		if (i % 3===0) {
      			output += exclamation;
 
-     		//this adds the extra exclamation points with every occurence of the third word.
+		//this adds the extra exclamation points with every occurence of the third word.
      			exclamation += "!";
      		}
      		console.log(output);
@@ -43,3 +41,24 @@ function addExcitement (theWordArray) {
 addExcitement(sentence);
 // addExcitement(sentence2);
 
+// ANOTHER EXAMPLE
+// Create an array that contains the words in the sentence
+var sentenceBio = "I spent my caterpillar days in marketing, my cocoon days at Nashville Software School, and my butterfly days as a developer.";
+var sentenceBioSplit = sentenceBio.split(" ");
+let output2 = "";
+
+// The overlyExcited function should accept the array as the sole argument
+function overlyExcited (theWordArray) {
+for (let i = 0; i < theWordArray.length; i++){
+    let currentWord = theWordArray[i];
+     output2 += " " + currentWord;
+     if (i % 3===0) {
+     		output2 += exclamation;
+		//this adds the extra exclamation points with every occurence of the third word.
+     		exclamation += "!";
+     	}
+     	console.log(output2);
+  }
+}
+  
+overlyExcited(sentenceBioSplit);
